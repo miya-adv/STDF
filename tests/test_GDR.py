@@ -214,6 +214,8 @@ def gdr(endian):
 #   Test printing when the record is empty
     empty = GDR('V4', endian)
     print(empty)
+    assert empty.to_atdf() == "GDR:"
+    assert isinstance(empty.__repr__(), bytes)
 
 #   ToDo: Test JSON output
 
